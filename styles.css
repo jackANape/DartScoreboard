@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #203354;
+
+}
+
+.span-three {
+    grid-column: span 3;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.scoreboard-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(3, 100px);
+    /*    grid-template-rows: minmax(120px, auto) repeat(5, 100px);*/
+    grid-template-rows: minmax(120px, auto) repeat(6, 80px);
+}
+
+/*built 1 output container with 2 sub containers*/
+.output {
+    grid-column: 1 / -1;
+    background-color: #203354;
+    padding: 10px;
+}
+
+.output .all-scores {
+    grid-column: 1 / -1;
+    background-color: #203354;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+    height: 120px
+}
+
+.output .previous-stats {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.output .previously-scored {
+    color: white;
+    opacity: 0.3;
+    font-size: 2rem;
+    grid-row: 1;
+}
+
+.output .legs-stats {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.output .legs-text {
+    color: white;
+    text-align: start;
+    padding-right: 10px;
+}
+
+.output .current-avg {
+    color: white;
+    text-align: start;
+    grid-row: 2;
+    align-self: flex-start;
+}
+
+.output .current-score {
+    color: white;
+    font-size: 5rem;
+}
+
+/*this container is storing the score being typed*/
+.output .score {
+    grid-column: 1 / -1;
+    background-color: #203354;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+    height: 50px
+}
+
+.score .enter-score-text {
+    color: white;
+    opacity: 0.1;
+    font-style: italic;
+}
+
+.score .entered-score {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/*style all the buttons with colour and font*/
+.scoreboard-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #203354;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.scoreboard-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.scoreboard-grid > button[data-clear] {
+    background-color: rgba(228, 69, 52, .9);
+}
+
+.scoreboard-grid > button[data-clear]:hover {
+    background-color: #e44534;
+}
+
+.scoreboard-grid > button[data-bust] {
+    background-color: rgba(255, 150, 79, .9);
+}
+
+.scoreboard-grid > button[data-bust]:hover {
+    background-color: #ff964f;
+}
+
+.scoreboard-grid > button[data-score] {
+    background-color: rgba(119, 221, 119, .9);
+}
+
+.scoreboard-grid > button[data-score]:hover {
+    background-color: #77dd77;
+}
+
+.scoreboard-grid > button[data-new-game] {
+    background-color: rgb(255, 255, 255, .14);
+    color: rgb(255, 255, 255, .14);
+}
+
+.scoreboard-grid > button[data-new-game]:hover {
+    background-color: #a7c7e7;
+    color: white;
+}
+
+.scoreboard-grid > button[data-undo] {
+    background-color: rgb(255, 255, 255, .14);
+    color: rgb(255, 255, 255, .14);
+}
+
+.scoreboard-grid > button[data-undo]:hover {
+    background-color: #a7c7e7;
+    color: white;
+}
